@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<style>
+    #one {
+        float: left;
+        padding-top: 50px;
+        padding-left: 300px;
+    }
+
+    #two {
+        float: right;
+        padding-top: 50px;
+        padding-right: 300px;
+    }
+
+    body {
+        /* background: url(https://ak.picdn.net/shutterstock/videos/24858791/thumb/1.jpg) no-repeat center center/cover; */
+        /* content: " "; */
+
+        /* background-image: linear-gradient(to right, #833ab4, #fd1d1d,#fcb045); */
+        /* background-image: linear-gradient(120deg, #85a9fd 0%, #f68084 100%); */
+        background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 52rem;
+        z-index: -1;
+        opacity: 0.8;
+    }
+
+    .card-body {
+        text-align: center;
+    }
+
+    #login {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    @media screen and (max-width: 1300px) {
+
+        #one {
+            float: left;
+            padding-top: 50px;
+            padding-left: 200px;
+        }
+
+        #two {
+            float: right;
+            padding-top: 50px;
+            padding-right: 200px;
+        }
+
+    }
+
+    @media screen and (max-width: 1000px) {
+
+        #one {
+            float: left;
+            padding-top: 50px;
+            padding-left: 100px;
+        }
+
+        #two {
+            float: right;
+            padding-top: 50px;
+            padding-right: 100px;
+        }
+
+    }
+
+    @media screen and (max-width: 800px) {
+
+        #one {
+            float: left;
+            padding-top: 50px;
+            padding-left: 40px;
+        }
+
+        #two {
+            float: right;
+            padding-top: 50px;
+            padding-right: 40px;
+        }
+
+    }
+
+    @media screen and (max-width:660px) {
+
+        #one {
+            float: left;
+            padding-top: 50px;
+            padding-left: 10px;
+        }
+
+        #two {
+            float: right;
+            padding-top: 50px;
+            padding-right: 10px;
+        }
+
+    }
+
+    @media screen and (max-width:600px) {
+
+        #one {
+            float: left;
+            padding-top: 50px;
+            padding-left: 160px;
+        }
+
+        #two {
+            float: right;
+            padding-top: 50px;
+            padding-right: 158px;
+        }
+
+    }
+</style>
+
+<body ng-app="myapp">
+    <div>
+        <div>
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <h5 class="text-white h4">MedEra &reg; </h5>
+                    <span class="text-muted"> Keeping You Well... </span>
+                </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand">MedEra &reg; </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" class="nav"
+                                            ui-sref="first">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" class="nav" ui-sref="second"> Login </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link active" class="nav" ui-sref="third"> Register </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" class="nav" ui-sref="sixteen"> Receptionist </a>
+                                      </li>
+
+                                </ul>
+
+                                <form class="d-flex">
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <h1 id="login"> LOGIN PAGES </h1>
+        </div>
+        <div id="one">
+            <div class="card" style="width: 18rem;">
+                <img src="https://previews.123rf.com/images/grgroup/grgroup2004/grgroup200400705/143778677-avatar-mann-mit-maskendesign-der-medizinischen-nothilfe-pr%C3%BCfungsklinik-f%C3%BCr-hygienehygiene-und-patien.jpg"
+                    class="card-img-top" alt="..." width="150px" height="350px">
+                <div class="card-body">
+                    <h5 class="card-title">Patients Login </h5>
+                    <a ui-sref="forth" class="btn btn-primary">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="two">
+
+            <div class="card" style="width: 18rem;">
+                <img src="data:image/jpeg;base64,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"
+                    class="card-img-top" alt="..." width="150px" height="350px">
+                <div class="card-body">
+                    <h5 class="card-title"> Doctor Login </h5>
+
+                    <a ui-sref="fifth" class="btn btn-primary">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+        <script src="hospital.js"></script>
+</body>
+
+</html>

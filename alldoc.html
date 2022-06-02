@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: rgb(255, 224, 224);
+        }
+
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #f1f1f1;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+
+        .navbar {
+            background-color: #cf4743;
+        }
+
+        .btn1 {
+            /* border: rgb(68, 10, 10) 2px solid; */
+            background-color: #2b6a72;
+            width: 120px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        #book {
+            font-size: 60px;
+            margin-top: 20px;
+        }
+
+        #info {
+            margin-top: 30px;
+            background-color: #a1f5ef;
+        }
+
+        #medpic {
+            margin-bottom: 5px;
+        }
+
+        #medpic2 {
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        #box {
+            width: 450px;
+            height: 450px;
+            background-color: #c1baff;
+            /* border: black 2px solid; */
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+
+        #book {
+            font-size: 60px;
+            margin-top: 20px;
+        }
+
+        #info {
+            margin-top: 30px;
+            background-color: #0f918e;
+        }
+
+        #medpic {
+            margin-bottom: 10px;
+        }
+
+
+
+        #dp {
+            margin-top: 100px;
+        }
+
+        #box2 {
+            width: 500px;
+            height: 540px;
+            background-color: #13e0dc;
+            border-radius: 40px;
+            color: #a1f5ef;
+            padding-top: 100px;
+            text-align: left;
+            padding-left: 15px;
+            margin-top: 20px;
+        }
+
+        .bold {
+            color: black;
+        }
+
+        #right {
+            float: right;
+            width: 700px;
+            margin-top: 20px;
+            margin-right: 60px;
+        }
+
+        #left {
+            float: left;
+            width: 600px;
+
+            margin-top: 20px;
+        }
+
+        #heading h1 {
+            font-size: 60px;
+        }
+
+        .card {
+            margin-top: 10px;
+            background-color: #e4fff0;
+        }
+
+        #imgs {
+            margin-bottom: 50px;
+        }
+
+        #h1 {
+
+            font-size: 60px;
+        }
+
+        .form-select {
+            width: 700px;
+        }
+        .table{
+            background-color: #ff8484;
+        }
+        #top{
+            background-color: rgb(50, 50, 50);
+            color: white;
+        }
+        #sub{
+            margin-top: 10px;
+            width: 80px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body ng-controller="alldoc">
+
+    <div id="myNav" class="overlay" >
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#"><img src="https://seeklogo.com/images/M/medanta-the-medicity-logo-9F111BAEBC-seeklogo.com.png"
+                    alt="" srcset="" id="medpic"></a>
+                    <a ui-sref="seventeen">Pending Appointments</a>
+                    <a ui-sref="eighteen">All Doctors</a>
+                    <a ui-sref="nineteen">All Patients</a>
+                    <a ui-sref="twentythree">Everyone's Detail </a>
+
+        </div>
+    </div>
+
+
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()" id="side">&#9776; MedEra &reg; </span>
+            </a>
+            <form class="d-flex">
+                <!-- <button type="button" class="btn1 btn-danger"><i class="fa fa-sign-out"></i>Log Out</button> -->
+            </form>
+        </div>
+    </nav>
+    <center>
+        <h1 id="h1"> ALL DOCTORS </h1>
+    </center>
+    <br>
+    <div>
+
+        <center>
+            <h2> List of all Doctor's </h2>
+            <form> 
+
+                <select class="form-select" aria-label="Default select example"  id="drop" ng-model="gender" >
+                    
+                    
+                    <option >Male</option>
+                    <option >Female</option>
+                    <option >Other</option>
+
+                </select>
+           <input type="submit" value="Submit" id="sub" ng-click="submit()">
+            </form>
+        </center>
+    </div>
+    <br>
+    <br>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr id="top">
+                  <th scope="col">Doc Id</th>
+                  <th scope="col">Name </th>
+                  <th scope="col">Phone Number </th>
+                  <th scope="col">Email Id</th>
+                </tr>
+              </thead>
+              <tbody ng-repeat="us in emp" >
+                <tr>
+                    <th>{{us.user}}</th>
+                    <td>{{us.fname}} {{us.lname}}</td>
+                    <td>{{us.phone}}</td>
+                    <td>{{us.mail}}</td>
+                </tr>
+              </tbody>
+        </table>
+      </div>
+    <script src="hospital.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

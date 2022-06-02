@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Doctor</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.js"
+        integrity="sha512-5J08Lq3B2EfuPrNSYckUPHKYHaUhCQ4MdeObdcR0YZnr8eapZ7XMA2ejUyQYpWN+fwO48wuxsL5KDZYIVVVxvg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        /* body {
+            background: url(https://ak.picdn.net/shutterstock/videos/24858791/thumb/1.jpg) no-repeat center center/cover;
+            content: " ";
+
+            background-image: linear-gradient(to right, #833ab4, #fd1d1d,#fcb045);
+            background-image: linear-gradient(120deg, #85a9fd 0%, #f68084 100%);
+            background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 52rem;
+            z-index: -1;
+            opacity: 0.8;
+        } */
+
+        #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+        /* #home::before {
+            background: url('Ocean - 74888.mp4') no-repeat center center/cover;
+            content: " ";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 51.5rem;
+            z-index: -1;
+            opacity: 1;
+
+        } */
+
+        #home {
+            color: rgb(255, 255, 255);
+            margin: auto;
+            /* text-align: center; */
+            font-size: 1.2rem;
+            /* padding-top: 120px; */
+        }
+
+        #box {
+            float: right;
+            background-color: rgb(194, 100, 100);
+            width: 500px;
+            height: 827px;
+            /* margin-left: 800px; */
+            /* margin: 170px 80px; */
+            /* border: #000000 2px solid; */
+            /* border-radius: 10px; */
+            /* margin-top: 100px; */
+            color: black;
+
+            padding: 0px 00px;
+        }
+
+        #box input {
+            font-weight: bold;
+            /* color: #000000; */
+            /* color: hsl(0, 0%, 100%); */
+            color:rgb(0, 0, 0)
+
+
+        }
+
+        #id {
+            opacity: 0.1;
+
+        }
+
+        #head {
+            /* margin: revert; */
+            text-align: center;
+        }
+
+        /* #btn { */
+            /* margin-top: 20px; */
+        /* } */
+-ø
+        #tick {
+            /* margin-top: 20px; */
+            margin-left: 12px
+        }
+
+        #floatingInput {
+            background-color: rgb(255, 255, 255);
+            width: 480px;
+            margin: 10px 10px;
+            color: rgb(0, 0, 0);
+        }
+
+        #floatingPassword {
+            background-color: rgb(255, 255, 255);
+            width: 480px;
+            margin: 10px 10px;
+            color: rgb(0, 0, 0);
+        }
+
+        .nav-item:hover {
+            background-color: #04763f;
+        }
+
+        #img {
+            padding-top: 10px;
+        }
+
+        .names {
+            display: flex;
+        }
+
+        .names input {
+            width: 100px;
+        }
+
+        #drop {
+            background-color: rgb(255, 255, 255);
+            width: 480px;
+            color: rgb(0, 0, 0);
+            margin-left: 10px;
+        }
+        .content {
+  position: fixed;
+  
+  color: #f1f1f1;
+  width: 100%;
+
+}
+#select{
+    padding-left:15px ;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="Videos/Skyscrapers - 91744.mp4" type="video/mp4">
+      </video>
+      <div class="content"> 
+    <section id="home">
+        <div>
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <h5 class="text-white h4">MedEra &reg; </h5>
+                    <span class="text-muted"> Keeping You Well... </span>
+                </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand">MedEra &reg; </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" class="nav"
+                                            ui-sref="first">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" class="nav" ui-sref="second"> Login </a>
+                                    </li>
+                                   
+                                    <li class="nav-item">
+                                        <a class="nav-link active" class="nav" ui-sref="sixth"> Register </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Dropdown
+                                        </a>
+                                        <ul class="dropdown-menu active" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="#accordionExample">About </a></li>
+                                            <li><a class="dropdown-item" href="#">Security</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                                <form class="d-flex">
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+
+        <div id="box">
+            <center id="img"><img
+                    src="https://seeklogo.com/images/M/medanta-the-medicity-logo-9F111BAEBC-seeklogo.com.png" alt=""
+                    srcset="" width="150px" height="90px">
+            </center>
+
+            <h5 id="head"> Apply as Doctor </h5>
+
+            <form ng-controller="data">
+                <div class="names">
+                    <input type="text" class="form-control" id="floatingInput" ng-model="fname"
+                        placeholder=" First Name " required>
+                    <input type="text" class="form-control" id="floatingInput" ng-model="lname"
+                        placeholder=" Last Name " required>
+                </div>
+                <p id="select"> SELECT YOUR DEGREE : </p>
+                <select class="form-select" aria-label="Default select example"  id="drop" ng-model="degree"  >
+                    <!-- <option selected  > SELECT YOUR DEGREE </option> -->
+                    <option  > MBBS </option>
+                    <option  > BPHARMA </option>
+                    <option  > DPHARMA </option>
+                    <option  > BDS </option>
+                    <option  > BAMS </option>
+                    <option  > BUMS </option>
+                    
+                </select>
+            
+                
+                <input type="text" class="form-control" id="floatingInput" ng-model="user" placeholder="Username "
+                    required>
+                <input type="text" class="form-control" id="floatingInput" ng-model="college" placeholder="College Name "
+                    required>
+                <input type="date" class="form-control" id="floatingInput" ng-model="dob" placeholder="YYYY-MM-DD" value=""
+                
+                    required>
+                    <select class="form-select" aria-label="Default select example"  id="drop" ng-model="gender" >
+                    
+                        <option >Male</option>
+                        <option >Female</option>
+                        <option >Other</option>
+    
+                    </select>
+                <!-- <input type="" class="form-control" id="floatingInput" ng-model="cgpa" placeholder="GENDER"
+                    required> -->
+                <!-- <input type="text" class="form-control" id="floatingInput" ng-model="user" placeholder="Username "
+                    required> -->
+                <input type="email" class="form-control" id="floatingInput" ng-model="email" placeholder="Email Id "
+                    required>
+                <input type="number" class="form-control" id="floatingInput" ng-model="phoneno" placeholder="Phone No. "
+                    required>
+                <input type="password" class="form-control" id="floatingPassword" ng-model="password"
+                    placeholder="Password" required>
+                <input type="password" class="form-control" id="floatingPassword" ng-model="cpassword"
+                    placeholder="Confirm Password" required>
+
+
+
+
+                <div id="tick" class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                        Agree to all terms and conditions**
+                        </label>
+                    </div>
+                </div>
+                <center><button type="submit" class="btn btn-primary" id="btn" ng-click="func()"> Apply </button>
+                </center>
+
+            </form>
+        </div>
+    </section>
+      </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.js"
+        integrity="sha512-5J08Lq3B2EfuPrNSYckUPHKYHaUhCQ4MdeObdcR0YZnr8eapZ7XMA2ejUyQYpWN+fwO48wuxsL5KDZYIVVVxvg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+            <script src="hospital.js"></script>
+    <script>
+
+var a = angular.module("myapp", []);
+        // a.controller("drop", function ($scope, $http, $log) {
+        //     $http.get("http://10.21.85.90:8000/medera/doctor/register")
+        //         .then(function (response) {
+
+        //             $scope.emp = response.data
+        //             $log.info(response);
+        //             console.log($scope.fname);
+        //         })
+        // })
+
+
+
+        a.controller("data", function ($scope, $http, $location) {
+            $scope.func = function () {
+                var email = $scope.email;
+
+                var phoneno = $scope.phoneno;
+
+                var fname = $scope.fname;
+
+                var lname = $scope.lname;
+
+                var pass = $scope.password;
+
+                var cpass = $scope.cpassword;
+
+                var user = $scope.user; 
+
+                var degree = $scope.degree;
+
+                var dob = $scope.dob;
+                // var d=new Date(dob.replace(/-/g,'\/'));
+
+                var college = $scope.college;
+
+                var cgpa = $scope.cgpa;
+
+
+                var obj = { mail:email , pass1:pass , pass2:cpass , user:user , phone:phoneno , fname:fname, lname:lname , dob:dob , college:college , degree:degree , cgpa:cgpa }
+
+                console.log(obj);
+                $http({
+                    method:"POST",
+                    url:"http://10.21.85.90:8000/medera/doctor/register",
+                    data :JSON.stringify(obj),
+                    header: {
+                     "Content-Type": "application/json"
+                  }
+                })
+                
+
+            }
+            
+
+        });
+        // a.controller("data", function ($scope, $http, $location) {
+        //     $scope.func = function () {
+        //         var email = $scope.email;
+        //         var pass = $scope.password;
+        //         console.log(email);
+        //         console.log(pass);
+        //         var obj = { user_name: email, passw: pass }
+        //         console.log(obj);
+        //         $http({
+        //          method: "POST",
+        //          url:"http://d0c2-125-21-249-98.in.ngrok.io:8000/medera/patient/register",
+        //          data :JSON.stringify(obj),
+        //          header: {
+        //              "Content-Type": "text/plain"
+        //          }
+        //      })
+
+    </script>
+</body>
+
+</html>

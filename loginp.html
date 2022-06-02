@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.js"
+    integrity="sha512-5J08Lq3B2EfuPrNSYckUPHKYHaUhCQ4MdeObdcR0YZnr8eapZ7XMA2ejUyQYpWN+fwO48wuxsL5KDZYIVVVxvg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.js"
+    integrity="sha512-5J08Lq3B2EfuPrNSYckUPHKYHaUhCQ4MdeObdcR0YZnr8eapZ7XMA2ejUyQYpWN+fwO48wuxsL5KDZYIVVVxvg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    body {
+      background: url(https://cdn.pixabay.com/photo/2016/02/08/23/36/isolated-1188036_1280.png) no-repeat center center/cover;
+      /* content: " "; */
+
+      /* background-image: linear-gradient(to right, #833ab4, #fd1d1d,#fcb045); */
+      /* background-image: linear-gradient(120deg, #85a9fd 0%, #f68084 100%); */
+      /* background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); */
+      background-color: rgb(255, 197, 176);
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 52rem;
+      z-index: -1;
+      opacity: 0.8;
+    }
+
+    #box {
+      background-color: #ffffff;
+      width: 500px;
+      height: 400px;
+      /* margin: auto; */
+      margin: 0px 100px;
+      /* border: #000000 2px solid; */
+      border-radius: 10px;
+      margin-top: 160px;
+    }
+
+    #box input {
+      font-weight: bold;
+      /* color: #000000; */
+      color: hsl(0, 0%, 100%);
+
+
+    }
+
+    #id {
+      opacity: 0.1;
+    }
+
+    #head {
+      /* margin: revert; */
+      text-align: center;
+    }
+
+    #btn {
+      margin-top: 20px;
+    }
+
+    #tick {
+      /* margin-top: 20px; */
+      margin-left: 12px
+    }
+
+    #floatingInput {
+      background-color: rgb(41, 41, 41);
+      width: 470px;
+      margin: 10px 10px;
+    }
+
+    #floatingPassword {
+      background-color: rgb(41, 41, 41);
+      width: 470px;
+      margin: 10px 10px;
+    }
+
+    .nav-item:hover {
+      background-color: #04763f;
+    }
+
+    #img {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body ng-app="myapp">
+
+  <div>
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+        <h5 class="text-white h4">MedEra &reg; </h5>
+        <span class="text-muted"> Keeping You Well... </span>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand">MedEra &reg; </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" class="nav" ui-sref="first">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" class="nav" ui-sref="second"> Login </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link active" class="nav" ui-sref="third"> Register </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu active" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#accordionExample">About </a></li>
+                    <li><a class="dropdown-item" href="#">Security</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </nav>
+  </div>
+  <div> 
+  <div>
+    <div id="box" ng-controller="loginp">
+      <center><img src="https://seeklogo.com/images/M/medanta-the-medicity-logo-9F111BAEBC-seeklogo.com.png" alt=""
+          srcset="" id="img" width="150px" height="150px">
+      </center>
+
+      <h5 id="head"> Log in as Patient </h5>
+
+      <form>
+        <input type="text" class="form-control" id="floatingInput" ng-model="user" placeholder="Username " required>
+
+
+
+        <input type="password" class="form-control" id="floatingPassword" ng-model="password" placeholder="Password"
+          required>
+
+
+
+        <div id="tick" class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" required>
+            Agree to all terms and conditions**
+            </label>
+          </div>
+        </div>
+        <center><button type="submit" class="btn btn-primary" id="btn" ng-click="func()"> Log In </button></center>
+
+      </form>
+    </div>
+
+  </div>
+</div> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <script src="hospital.js"></script>
+  <script>
+    // var a = angular.module("myapp", []);
+
+
+
+
+    // a.controller("login", function ($scope, $http, $location) {
+    //   $scope.func = function () {
+
+
+    //     var pass = $scope.password;
+
+    //     var user = $scope.user;
+
+    //     var obj = { pass1: pass, user: user }
+
+    //     console.log(obj);
+    //     $http({
+    //       method: "POST",
+    //       url: "https://53e8-125-21-249-98.in.ngrok.io/medera/patient/login",
+    //       data: JSON.stringify(obj),
+    //       header: {
+    //         "Content-Type": "application/json"
+    //       }
+    //     })
+
+
+    //   }
+
+
+    // });
+
+
+    var a = angular.module("myapp", []);
+
+
+
+
+    
+    a.config(['$stateProvider', function ($stateProvider) {
+      $stateProvider
+        .state('first', {
+          url: '/front.html',
+          templateUrl: 'front.html',
+          // controller: 'login'
+        })
+        .state('second', {
+          url: '/login.html',
+          templateUrl: 'login.html',
+          controller: 'login'
+        })
+
+
+    }]);
+        // });
+
+
+  </script>
+
+</body>
+
+</html>

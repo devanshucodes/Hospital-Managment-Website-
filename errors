@@ -1,0 +1,192 @@
+// doctor page 
+ 
+ <script>
+        var a = angular.module("myapp", []);
+        a.controller("docwork", function ($scope, $http, $log) {
+   let doctor=JSON.parse(localStorage.getItem("b"));
+  $http({
+    method: "POST",
+    url: "http://10.21.85.48:8000/medera/doctor/getpatient",
+    data: JSON.stringify({"fname":doctor}),
+    header: {
+      "Content-Type": "application/json"
+    }
+  })
+   $http.post("http://10.21.85.48:8000/medera/doctor/getpatient")
+     .then(function (response) {
+
+       $scope.emp= response.data;
+       console.log(response);
+       $log.info(response);
+       console.log($scope.fname);
+    })
+ })
+    </script>
+
+
+
+
+
+
+
+
+
+// unknown
+
+a.controller("login", function ($scope, $http, $location) {
+  $scope.func = function () {
+
+
+    var pass = $scope.password;
+
+    var user = $scope.user;
+
+    var obj = { pass1: pass, user: user }
+
+    console.log(obj);
+    $http({
+      method: "POST",
+      url: "http://10.21.85.48:8000/medera/doctor/login",
+      data: JSON.stringify(obj),
+      header: {
+        "Content-Type": "application/json"
+      }
+    })
+
+
+  }
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// booked function index issue
+
+
+.then(function (response,index) {
+
+  // this.response.splice(index,1)
+  $scope.book = response.data;
+  $scope.doctor = response.data[index].fields.doctor;
+  $scope.user = response.data[index].fields.user;
+  $scope.appointment = response.data[index].fields.appointment;
+  console.log($scope.emp)
+  console.log($scope.doctor)
+  console.log($scope.user)
+  console.log($scope.appointment)
+  console.log(index)
+  // $log.info(response.data);
+
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a.controller("loginp", function ($scope, $http, $location) {
+  $scope.func = function () {
+
+
+    var pass = $scope.password;
+
+    var user = $scope.user;
+
+    var obj = { pass1: pass, user: user }
+
+    console.log(obj);
+    $http({
+      method: "POST",
+      url: "http://10.21.85.48:8000/medera/patient/login",
+      data: JSON.stringify(obj),
+      header: {
+        "Content-Type": "application/json"
+      }
+    })
+
+      .then(function (response) {
+
+        console.log(response.status);
+        if (response.status == 200) {
+
+          Swal.fire(
+            'Good job!',
+            'You are now logged in ',
+            'success'
+          )
+          $location.url("/patient.html");
+          return;
+        }
+
+
+      }).catch((response) => {
+        if (response.status == 401) {
+          swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: response.data
+          })
+        }
+        console.log(err)
+      })
+  }
+
+
+})
+a.controller("patient", function ($scope, $http, $location) {
+
+  let user = JSON.parse(localStorage.getItem("a"));
+  $http({
+    method: "POST",
+    url: "http://10.21.85.48:8000/medera/patient/home",
+    data: JSON.stringify({ "user": user }),
+    header: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(function (response) {
+      
+      console.log(response.data);
+      $scope.userdata = response.data;
+      $scope.fname = response.data.fname;
+      $scope.lname = response.data.lname;
+      $scope.degree = response.data.degree;
+      $scope.mail = response.data.mail;
+      $scope.user = response.data.user;
+      $scope.degree = response.data.degree;
+      $scope.college = response.data.college;
+      $scope.phone = response.data.phone;
+      $scope.cgpa = response.data.cgpa;
+
+
+      console.log(response.data.fname);
+      console.log(response.data.lname);
+    })
+
+
+
+
+})

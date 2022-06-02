@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: rgb(212, 255, 241);
+        }
+
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #f1f1f1;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+
+        .navbar {
+            background-color: #047a87;
+        }
+
+        /* .btn {
+             border: black 2px solid; 
+            background-color: #ec7d7d;
+        } */
+
+        /* .btn:hover {
+            border: black 0px solid;
+            background-color: #ec7d7d;
+            color: black;
+        } */
+
+        #book {
+            font-size: 60px;
+            margin-top: 20px;
+        }
+
+        #info {
+            margin-top: 30px;
+            background-color: #a1f5ef;
+        }
+
+        #medpic {
+            margin-bottom: 10px;
+        }
+
+        #left {
+            float: left;
+            width: 690px;
+        }
+
+        #right {
+            float: right;
+            width: 690px;
+        }
+
+        #dp {
+            margin-top: 100px;
+        }
+
+        #box2 {
+            width: 500px;
+            height: 500px;
+            background-color: #047a87;
+            border-radius: 40px;
+            color: #a1f5ef;
+            padding-top: 80px;
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        .bold {
+            color: black;
+        }
+        h1{
+            font-size: 60px;
+        }
+        #box{
+            width: 800px;
+            height: 100px;
+            border-radius: 10px;
+            background-color: #047a87;
+            margin-top: 40px;
+        }
+        #drop{
+            width: 400px;
+            height: 40px;
+            border-radius: 10px;
+
+        }
+        #inp{
+            width: 1200px;
+            height: 400px;
+        }
+        #floatingTextarea{
+            height: 350px;
+            font-size: 30px;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="myNav" class="overlay" ng-controller="docpre">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#"><img src="https://seeklogo.com/images/M/medanta-the-medicity-logo-9F111BAEBC-seeklogo.com.png"
+                    alt="" srcset="" id="medpic"></a>
+            <a ui-sref="nine">Profile Info</a>
+            <a ui-sref="ten">Pending Appointments</a>
+            <a ui-sref="eleven">Booked Appointments</a>
+            <a ui-sref="twenty">Prescription</a>
+            <a ui-sref="twentyone">Update Appointment</a>
+
+        </div>
+    </div>
+
+
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()" id="side">&#9776; MedEra &reg; </span>
+            </a>
+            <form class="d-flex">
+                <button type="button" class="btn btn-danger"><i class="fa fa-sign-out"></i>Log Out</button>
+            </form>
+        </div>
+    </nav>
+
+    <div>
+
+
+        <center> <h1> PRESCRIPTION </h1></center>
+
+
+       <center> <div id="box">
+
+        <h3> Patient Name : </h3>
+        <!-- <select  aria-label="Default select example"  id="drop" ng-model="gender" ng-option="us.id for us in emp"> -->
+            <select ng-options="us.user for us in emp" ng-model="patient" id="drop" ></select>
+                    
+            
+        </select>
+
+        
+       </div>
+    </center>
+    <br>
+    <br>
+    
+    
+    <center>
+<div id="inp">   
+    
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" ng-model="pre"></textarea>
+            <label for="floatingTextarea"><b><center> Write Prescription below  </center>  </b></label>
+          </div>
+    
+
+
+</div>
+</center>
+    </div>
+
+<center> <center><button type="button" class="btn btn-success" ng-click="prescription()"> &#10004 Submit</button> </center>
+
+
+
+    <script src="hospital.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
